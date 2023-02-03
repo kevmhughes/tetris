@@ -1,5 +1,9 @@
-import useState from "react";
+import { useState } from "react";
 
-export const useBoard = ( { rows, columns }) => {
-    const [board, setBoard] = useState([])
-}
+import { buildBoard } from "../business/Board/Board.js"
+
+export const useBoard = ({ rows, columns }) => {
+  const [board] = useState(buildBoard({ rows, columns }));
+
+ return [board] 
+};
