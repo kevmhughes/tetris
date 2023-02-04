@@ -13,5 +13,7 @@
     grid-template-rows: repeat(4, 1fr);
     grid-template-columns: repeat(4, 1fr);
     width: 11vw;
+    max-width: 150px;
     height: 11vw;
+    max-height: 150px;
 }

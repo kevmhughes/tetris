@@ -1,10 +1,11 @@
-import "./BoardCell.css"
+import "./BoardCell.css";
 
-const BoardCell = ({ cell }) => {
+const BoardCell = ({ cell }) => (
     <div className={`BoardCell ${cell.className}`}>
         <div className="Sparkle"></div>
     </div>
-  };
+);
   
   export default BoardCell;
+  
   
