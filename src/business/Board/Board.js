@@ -1,4 +1,4 @@
-import { defaultCell } from "../Cell/Cell";
+import { defaultCell } from "../Cell/Cell.js";
 
 export const buildBoard = ({ rows, columns }) => {
   const builtRows = Array.from({ length: rows }, () => 
