@@ -1,8 +1,8 @@
 import "./Preview.css";
 import React from "react";
 
-import { buildBoard } from "../../business/Board/Board.js";
-import { transferToBoard } from "../../business/Tetrominoes/Tetrominoes.js";
+import { buildBoard } from "../../business/Board.js";
+import { transferToBoard } from "../../business/Tetrominoes.js";
 
 import BoardCell from "../BoardCell/BoardCell.js";
 

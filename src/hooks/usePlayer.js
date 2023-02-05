@@ -1,6 +1,6 @@
 import { useState, useCallback } from "react";
 
-import { randomTetromino } from "../business/Tetrominoes/Tetrominoes.js";
+import { randomTetromino } from "../business/Tetrominoes.js";
 
 // builds initial and updated version of the player
 const buildPlayer = (previous) => {

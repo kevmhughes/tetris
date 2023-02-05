@@ -1,6 +1,6 @@
 import { useState, useEffect } from "react";
 
-import { buildBoard, nextBoard } from "../business/Board/Board.js"
+import { buildBoard, nextBoard } from "../business/Board.js"
 
 export const useBoard = ({ 
   rows, 

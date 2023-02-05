@@ -1,6 +1,6 @@
-import { hasCollision, isWithinBoard } from "../Board/Board.js"
-import { rotate } from "../Tetrominoes/Tetrominoes.js";
-import { Action } from "../Input/Input.js";
+import { hasCollision, isWithinBoard } from "./Board.js"
+import { rotate } from "./Tetrominoes.js";
+import { Action } from "./Input.js";
 
 
 const attemptRotation = ({ board, player, setPlayer }) => {

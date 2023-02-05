@@ -1,5 +1,5 @@
-import { defaultCell } from "../Cell/Cell.js";
-import { transferToBoard } from "../Tetrominoes/Tetrominoes.js";
+import { defaultCell } from "./Cell.js";
+import { transferToBoard } from "./Tetrominoes.js";
 
 export const buildBoard = ({ rows, columns }) => {
   const builtRows = Array.from({ length: rows }, () => 
