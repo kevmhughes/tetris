@@ -7,10 +7,11 @@ import GameController from "../GameController/GameController";
 
 import { useBoard } from "../../hooks/useBoard.js";
 import { useGameStats } from "../../hooks/useGameStats.js";
-import { usePlayer } from "../../hooks/usePlayer/usePlayer.js";
+import { usePlayer } from "../../hooks/usePlayer";
 
 const Tetris = ({ rows, columns, setGameOver }) => {
   const [gameStats, addLinesCleared] = useGameStats();
+  // The player is the grid in which the tetromino piece sits
   const [player, setPlayer, resetPlayer] = usePlayer();
   const [board, setBoard] = useBoard({ 
     rows, 
