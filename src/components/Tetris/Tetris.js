@@ -3,6 +3,7 @@ import "./Tetris.css";
 import Board from "../Board/Board.js";
 import GameStats from "../GameStats/GameStats.js"
 import Previews from "../Previews/Previews.js";
+import GameController from "../GameController/GameController";
 
 import { useBoard } from "../../hooks/useBoard.js";
 import { useGameStats } from "../../hooks/useGameStats.js";
