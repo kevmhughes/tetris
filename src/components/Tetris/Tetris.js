@@ -30,7 +30,7 @@ const Tetris = ({ rows, columns, setGameOver }) => {
         gameStats={gameStats}
         player={player}
         setGameOver={setGameOver}
-        setplayer={setPlayer}
+        setPlayer={setPlayer}
         />     
     </div>
   )
