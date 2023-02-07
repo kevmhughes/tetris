@@ -4,3 +4,20 @@
     margin-top: -933px;
     margin-left: 681px;
 }
+
+@media only screen and (max-width: 2000px) {
+    .SidePanel {
+    flex-direction: column;
+    margin-top: -632px;
+    margin-left: 430px;
+    }
+    
+}
+
+@media only screen and (max-width: 2000px) {
+    .PreviewContainer {
+        display: flex;
+        flex-direction: column;
+    }
+    
+}

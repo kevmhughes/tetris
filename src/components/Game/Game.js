@@ -1,5 +1,6 @@
 import Menu from "../Menu/Menu.js";
 import Tetris from "../Tetris/Tetris.js";
+import "./Game.css"
 
 import { useGameOver } from "../../hooks/useGameOver.js";
 
@@ -14,27 +15,17 @@ const Game = ({ rows, columns }) => {
   return (
     <div className="Game">
       {gameOver ? (
-        <div style={{    display: "flex",
-          flexDirection: "column",
-          alignItems: "center",}}>   
+        <div className="MenuContainer">   
           <Menu onClick={start} />
-          <div className="Instructions" style={{background: "rgb(100, 100, 100, 0.2)",
-    fontSize: "20px",
-    width: "300px",
-    display: "flex",
-    flexDirection: "column",
-    padding: "20px",
-    borderRadius: "20px",
-    position: "absolute",
-    bottom: "400px",}}>    
-            <p>KEYS:</p>
-            <p>arrow left: move left</p>
-            <p>arrow right: move right</p>
-            <p>arrow up: rotate</p>
-            <p>arrow down: slow drop</p>
-            <p>space bar: fast drop</p>
-            <p>q: quit</p>
-            <p>p: pause</p>
+          <div className="Instructions">    
+            <p><b>KEYS:</b></p>
+            <p><b>arrow left:</b> move left</p>
+            <p><b>arrow right:</b> move right</p>
+            <p><b>arrow up:</b> rotate</p>
+            <p><b>arrow down:</b> slow drop</p>
+            <p><b>space bar:</b> fast drop</p>
+            <p><b>q:</b> quit</p>
+            <p><b>p:</b> pause</p>
           </div>
         </div>
       ) : (

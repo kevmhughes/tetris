@@ -12,3 +12,21 @@
     box-shadow: rgba(0, 0, 0, 0.35) 0px 5px 15px;
     border-radius: 20px;
 }
+
+@media only screen and (max-width: 2000px) {
+    .Board {
+        margin: 2em auto;
+        display: grid;
+        grid-gap: 2px;
+        width: 300px;
+        max-width: 450px;
+        height: 600px;
+        max-height: 900px;
+        background: rgb(32, 0, 64);
+        padding: 5px;
+        border: 10px solid rgb(100, 100, 100);
+        box-shadow: rgba(0, 0, 0, 0.35) 0px 5px 15px;
+        border-radius: 20px;
+    }
+
+}
