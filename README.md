@@ -11,7 +11,7 @@ Blocks of different shapes drop from the top of the screen. Each block is made u
 
 # Take a Look at the App
 <kbd>
-<img src="src/assets/desktop_screenshot.png"/>
+<img src="src/assets/desktop_screenshot.mov"/>
 </kbd>
  
 # Tools Used
