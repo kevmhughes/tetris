@@ -5,10 +5,12 @@ const GameStats = ({ gameStats }) => {
     const { level, points, linesCompleted, linesPerLevel } = gameStats;
     const linesToLevel = linesPerLevel - linesCompleted;
 
+    const TopScore = localStorage.getItem("LastTopScore")
+
     return (
         <ul className="GameStats GameStats__right">
             <li style={{color: "rgb(102 102 3)"}}>High Score</li>
-            <li className="value" style={{color: "gold"}}>{localStorage.getItem("LastTopScore")}</li>
+            <li className="value" style={{color: "gold"}}>{TopScore ? TopScore : "0"}</li>
             <li>Level</li>
             <li className="value">{level}</li>
             <li>Lines to Level</li>
