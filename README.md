@@ -11,7 +11,7 @@ Blocks of different shapes drop from the top of the screen. Each block is made u
 
 # Take a Look at the App
 <kbd>
-<img src="readme-images/ChitChat-on-iOS.gif" height="450"/>
+<img src="assets/desktop-screenshot.png"/>
 </kbd>
  
 # Tools Used
