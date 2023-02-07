@@ -10,9 +10,78 @@ const buildGameStats = () => ({
 export const useGameStats = () => {
     const [gameStats, setGameStats] = useState(buildGameStats());
     
-    const addLinesCleared = useCallback((lines ) => {
+    const addLinesCleared = useCallback((lines) => {
         setGameStats((previous) => {
-            const points = previous.points + lines * 100;
+            var addOn = 0;
+            if (lines === 1 && previous.level === 1) {
+                addOn = 100;
+            } else if (lines === 2 && previous.level === 1) {
+                addOn = 400;
+            } else if (lines === 3 && previous.level === 1) {
+                addOn = 900;
+            } else if (lines === 4 && previous.level === 1) {
+                addOn = 2000;
+            } else if (lines === 1 && previous.level === 2) {
+                addOn = 200;
+            } else if (lines === 2 && previous.level === 2) {
+                addOn = 800;
+            } else if (lines === 3 && previous.level === 2) {
+                addOn = 1800;
+            } else if (lines === 4 && previous.level === 2) {
+                addOn = 4000;
+            } else if (lines === 1 && previous.level === 3) {
+                addOn = 200;
+            } else if (lines === 2 && previous.level === 3) {
+                addOn = 800;
+            } else if (lines === 3 && previous.level === 3) {
+                addOn = 1800;
+            } else if (lines === 4 && previous.level === 3) {
+                addOn = 4000;
+            } else if (lines === 1 && previous.level === 4) {
+                addOn = 300;
+            } else if (lines === 2 && previous.level === 4) {
+                addOn = 1200;
+            } else if (lines === 3 && previous.level === 4) {
+                addOn = 2700;
+            } else if (lines === 4 && previous.level === 4) {
+                addOn = 6000;
+            } else if (lines === 1 && previous.level === 5) {
+                addOn = 300;
+            } else if (lines === 2 && previous.level === 5) {
+                addOn = 1200;
+            } else if (lines === 3 && previous.level === 5) {
+                addOn = 2700;
+            } else if (lines === 4 && previous.level === 5) {
+                addOn = 6000;
+            } else if (lines === 1 && previous.level === 6) {
+                addOn = 400;
+            } else if (lines === 2 && previous.level === 6) {
+                addOn = 1600;
+            } else if (lines === 3 && previous.level === 6) {
+                addOn = 3600;
+            } else if (lines === 4 && previous.level === 6) {
+                addOn = 8000;
+            } else if (lines === 1 && previous.level === 7) {
+                addOn = 400;
+            } else if (lines === 2 && previous.level === 7) {
+                addOn = 1600;
+            } else if (lines === 3 && previous.level === 7) {
+                addOn = 3600;
+            } else if (lines === 4 && previous.level === 7) {
+                addOn = 8000;
+            } else if (lines === 1 && previous.level > 7) {
+                addOn = 500;
+            } else if (lines === 2 && previous.level > 7) {
+                addOn = 2000;
+            } else if (lines === 3 && previous.level > 7) {
+                addOn = 4500;
+            } else if (lines === 4 && previous.level > 7) {
+                addOn = 10000;
+            };
+            console.log("lines:", lines, "level", previous.level)
+            console.log("addOn:", addOn);
+            const points = previous.points + addOn;
+            console.log("points:", points)
             const { linesPerLevel } = previous;
             const newLinesCompleted = previous.linesCompleted + lines;
             const level = 
@@ -29,6 +98,5 @@ export const useGameStats = () => {
             };
         }, []);
     }, []);
-
     return [gameStats, addLinesCleared]
 }

@@ -28,6 +28,7 @@ export const useDropTime = ({ gameStats }) => {
         const newDropTime = Math.max(defaultDropTime - speed, minimumDropTime);
 
         setDropTime(newDropTime);
+        console.log("new droptime", newDropTime)
     }, [gameStats.level, setDropTime]);
 
     return [dropTime, pauseDropTime, resumeDropTime];
