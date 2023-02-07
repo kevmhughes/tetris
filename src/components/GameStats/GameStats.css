@@ -23,3 +23,16 @@
     
 
 }
+
+@media only screen and (max-width: 1600px) {
+    .GameStats {
+        display: flex;
+        flex-direction: column;
+    }
+
+    .GameStats .value {
+        font-size: 0.93rem;
+    }
+    
+
+}

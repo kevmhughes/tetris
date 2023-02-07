@@ -21,3 +21,11 @@
     }
     
 }
+
+@media only screen and (max-width: 1600px) {
+    .SidePanel {
+        margin-top: -532px;
+        margin-left: 385px;
+    }
+    
+}
