@@ -11,7 +11,7 @@
     color: rgba(255, 255, 255, 1)
 }
 
-@media only screen and (max-width: 2000px) {
+@media only screen and (max-width: 2400px) {
     .GameStats {
         display: flex;
         flex-direction: column;
