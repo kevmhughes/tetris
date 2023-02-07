@@ -11,6 +11,10 @@ Blocks of different shapes drop from the top of the screen. Each block is made u
 
 # Take a Look at the App
 <kbd>
+<img src="src/assets/desktop_screenshot.png"/>
+</kbd>
+ 
+<kbd>
 <img src="src/assets/desktop_screenshot.gif"/>
 </kbd>
  
