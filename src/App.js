@@ -1,4 +1,3 @@
-/* eslint-disable react/react-in-jsx-scope */
 import "./styles.css";
 import Game from "./components/Game/Game.js";
 import tetris from "./assets/tetris.png";

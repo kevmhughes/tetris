@@ -26,10 +26,9 @@ export const useDropTime = ({ gameStats }) => {
     useEffect(() => {
         const speed = speedIncrement * (gameStats.level - 1);
         const newDropTime = Math.max(defaultDropTime - speed, minimumDropTime);
-
         setDropTime(newDropTime);
-        console.log("new droptime", newDropTime)
     }, [gameStats.level, setDropTime]);
 
     return [dropTime, pauseDropTime, resumeDropTime];
+
 };

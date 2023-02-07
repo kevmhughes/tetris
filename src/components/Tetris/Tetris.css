@@ -1,3 +1,6 @@
-.Tetris {
-    position: relative;
+.SidePanel {
+    flex-direction: column;
+    align-items: center;
+    margin-top: -933px;
+    margin-left: 681px;
 }

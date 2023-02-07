@@ -82,6 +82,14 @@ export const useGameStats = () => {
             console.log("addOn:", addOn);
             const points = previous.points + addOn;
             console.log("points:", points)
+            var NewTopScore = points;
+            if (NewTopScore > localStorage.getItem("LastTopScore")) {
+                localStorage.setItem("LastTopScore", NewTopScore.toString())
+            } else {
+                NewTopScore = points
+            }
+            console.log("NewTopScore", NewTopScore)
+
             const { linesPerLevel } = previous;
             const newLinesCompleted = previous.linesCompleted + lines;
             const level = 

@@ -23,9 +23,13 @@ const Tetris = ({ rows, columns, setGameOver }) => {
 
   return (
     <div className="Tetris">
-      <Board board={board}/>
-      <GameStats gameStats={gameStats} />
-      <Previews tetrominoes={player.tetrominoes} />  
+        <Board board={board} />
+      <div className="SidePanel" style={{display: "flex"}}>
+          <div className="PreviewContainer">
+              <Previews tetrominoes={player.tetrominoes} />  
+            </div>
+          <GameStats gameStats={gameStats} />
+          </div>
       <GameController 
         board={board}
         gameStats={gameStats}

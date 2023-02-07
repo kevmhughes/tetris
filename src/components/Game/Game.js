@@ -7,7 +7,8 @@ const Game = ({ rows, columns }) => {
   const [gameOver, setGameOver, resetGameOver] = useGameOver();
 
   const start = () => {
-    resetGameOver();
+    resetGameOver(); 
+    localStorage.getItem("LastTopScore")
   };
 
   return (

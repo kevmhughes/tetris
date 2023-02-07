@@ -12,6 +12,10 @@ export const useInterval = (callback, delay) => {
     // Set up interval
     useEffect(() => {
         function tick() {
+            // fixes problem with autofocus when clicking on the screen during an active game but not when paused
+            const gameControllerInput = document.querySelector(".GameController");
+            gameControllerInput.focus();
+           
             savedCallback.current();
         }
         if (delay !== null) {

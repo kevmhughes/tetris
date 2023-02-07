@@ -2,7 +2,6 @@ import { hasCollision, isWithinBoard } from "./Board.js"
 import { rotate } from "./Tetrominoes.js";
 import { Action } from "./Input.js";
 
-
 const attemptRotation = ({ board, player, setPlayer }) => {
   const shape = rotate({
     piece: player.tetromino.shape,
