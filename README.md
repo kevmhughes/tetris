@@ -1,5 +1,5 @@
 
-# Tetris (desktop only)
+# Tetris 
 
 Play the game here [here](https://kevmhughes.github.io/tetris/)
 
