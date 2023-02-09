@@ -5,7 +5,10 @@ import tetris from "./assets/tetris.png";
 export default function App() {
   return (
     <div className="App">
-        <img src={tetris} alt="tetris logo"/>
+        <img className="TetrisLogo" src={tetris} alt="tetris logo"/>
+        <div className="HiddenMessage">
+          FOR DESKTOP ONLY
+        </div>
       <Game rows={20} columns={10} />
     </div>
   );

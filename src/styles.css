@@ -16,3 +16,18 @@
   background-size: cover;
 }
 
+@media only screen and (max-width: 600px) {
+  .TetrisLogo {
+      width: 70%;
+  }
+
+}
+
+@media only screen and (min-width: 600px) {
+  .HiddenMessage {
+    display: none;
+    visibility: hidden;
+    font-size: 20px;
+  }
+
+}
