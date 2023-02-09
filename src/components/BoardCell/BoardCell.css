@@ -4,6 +4,13 @@
     position: relative;
 }
 
+@media only screen and (max-width: 1600px) {
+    .BoardCell {
+        border-radius: 3px;
+    }
+
+}
+
 .tetromino {
     border-top: 3px solid rgba(255, 255, 255, 0.1);
     border-left: 3px solid rgba(255, 255, 255, 0.1);
