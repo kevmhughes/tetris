@@ -16,7 +16,7 @@ const Game = ({ rows, columns }) => {
   const [play, {stop}] = useSound(TetrisSound, {
     loop: true,
     interrupt: true,
-    volume: 0.2
+    volume: 0.1
   }) 
   
   const start = () => {
