@@ -4,6 +4,13 @@
     position: relative;
 }
 
+@media only screen and (max-width: 2400px) {
+    .BoardCell {
+        border-radius: 3px;
+    }
+
+}
+
 @media only screen and (max-width: 1600px) {
     .BoardCell {
         border-radius: 3px;
