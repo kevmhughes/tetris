@@ -23,3 +23,52 @@
     }
 
 }
+
+.Buttons {
+    border-radius: 50%;
+    background: gray;
+    height: 30px;
+    width: 30px;
+    text-align: -webkit-center;
+    border: none;
+    cursor: pointer;
+}
+
+.icons {
+    height: 20px;
+    width: 20px;
+    display: flex;
+}
+
+@media only screen and (max-width: 2400px) {
+    .Buttons {
+        position: relative;
+        bottom: -96px;
+    }
+
+}
+
+@media only screen and (max-width: 1600px) {
+    .Buttons {
+        position: relative;
+        bottom: -126px;
+    }
+
+}
+
+.ButtonsInMenu{
+    border-radius: 50%;
+    background: gray;
+    height: 30px;
+    width: 30px;
+    text-align: -webkit-center;
+    border: none;  
+    cursor: pointer;
+}
+
+.ButtonsInMenuContainer{
+    display: flex;
+    flex-direction: row-reverse;
+}
+
+
