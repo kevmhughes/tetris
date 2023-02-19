@@ -1,16 +1,21 @@
+/* eslint-disable no-unused-vars */
+/* eslint-disable prefer-const */
+/* eslint-disable no-plusplus */
+/* eslint-disable import/no-cycle */
+/* eslint-disable import/extensions */
 import { defaultCell } from "./Cell.js";
-import { movePlayer } from "./PlayerController.js"
+import { movePlayer } from "./PlayerController.js";
 import { transferToBoard } from "./Tetrominoes.js";
 
 export const buildBoard = ({ rows, columns }) => {
-  const builtRows = Array.from({ length: rows }, () => 
+  const builtRows = Array.from({ length: rows }, () =>
     Array.from({ length: columns }, () => ({ ...defaultCell }))
-    );
+  );
 
-    return {
-      rows: builtRows,
-      size: { rows, columns },
-    };
+  return {
+    rows: builtRows,
+    size: { rows, columns },
+  };
 };
 
 const findDropPosition = ({ board, position, shape }) => {
@@ -18,8 +23,8 @@ const findDropPosition = ({ board, position, shape }) => {
   let row = 0;
 
   for (let i = 0; i < max; i++) {
-    const delta = { row: i, column: 0}
-    const result = movePlayer({ delta, position, shape, board})
+    const delta = { row: i, column: 0 };
+    const result = movePlayer({ delta, position, shape, board });
     const { collided } = result;
 
     if (collided) {
@@ -30,13 +35,13 @@ const findDropPosition = ({ board, position, shape }) => {
   }
 
   return { ...position, row };
-}
+};
 
 export const nextBoard = ({ board, player, resetPlayer, addLinesCleared }) => {
-  const { tetromino, position } = player; 
+  const { tetromino, position } = player;
 
   // Copy and clear spaces used by pieces that hadn't collided and occupied spaces permanently
-  let rows = board.rows.map((row) => 
+  let rows = board.rows.map((row) =>
     row.map((cell) => (cell.occupied ? cell : { ...defaultCell }))
   );
 
@@ -44,7 +49,7 @@ export const nextBoard = ({ board, player, resetPlayer, addLinesCleared }) => {
   const dropPosition = findDropPosition({
     board,
     position,
-    shape: tetromino.shape
+    shape: tetromino.shape,
   });
 
   // Place ghost peice
@@ -56,7 +61,7 @@ export const nextBoard = ({ board, player, resetPlayer, addLinesCleared }) => {
     isOccupied: player.isFastDropping,
     position: dropPosition,
     rows,
-    shape: tetromino.shape
+    shape: tetromino.shape,
   });
 
   // Place the piece.
@@ -67,12 +72,12 @@ export const nextBoard = ({ board, player, resetPlayer, addLinesCleared }) => {
       isOccupied: player.collided,
       position,
       rows,
-      shape: tetromino.shape
+      shape: tetromino.shape,
     });
   }
 
   // Check for cleared lines
-  const blankRow = rows[0].map((_) => ({ ...defaultCell}));
+  const blankRow = rows[0].map((_) => ({ ...defaultCell }));
   let linesCleared = 0;
   rows = rows.reduce((acc, row) => {
     if (row.every((column) => column.occupied)) {
@@ -97,7 +102,7 @@ export const nextBoard = ({ board, player, resetPlayer, addLinesCleared }) => {
   // return the next board
   return {
     rows,
-    size: { ...board.size }
+    size: { ...board.size },
   };
 };
 

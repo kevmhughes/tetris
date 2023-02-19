@@ -1,26 +1,28 @@
+/* eslint-disable import/prefer-default-export */
+/* eslint-disable import/extensions */
 import { useState, useEffect } from "react";
 
-import { buildBoard, nextBoard } from "../business/Board.js"
+import { buildBoard, nextBoard } from "../business/Board.js";
 
-export const useBoard = ({ 
-  rows, 
-  columns, 
-  player, 
-  resetPlayer, 
-  addLinesCleared 
+export const useBoard = ({
+  rows,
+  columns,
+  player,
+  resetPlayer,
+  addLinesCleared,
 }) => {
   const [board, setBoard] = useState(buildBoard({ rows, columns }));
 
   useEffect(() => {
-    setBoard((previousBoard) => 
+    setBoard((previousBoard) =>
       nextBoard({
         board: previousBoard,
         player,
         resetPlayer,
-        addLinesCleared
+        addLinesCleared,
       })
     );
-  }, [player, resetPlayer, addLinesCleared])
+  }, [player, resetPlayer, addLinesCleared]);
 
- return [board] 
+  return [board];
 };

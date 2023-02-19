@@ -1,11 +1,15 @@
-import { hasCollision, isWithinBoard } from "./Board.js"
+/* eslint-disable prefer-destructuring */
+/* eslint-disable consistent-return */
+/* eslint-disable import/no-cycle */
+/* eslint-disable import/extensions */
+import { hasCollision, isWithinBoard } from "./Board.js";
 import { rotate } from "./Tetrominoes.js";
 import { Action } from "./Input.js";
 
 const attemptRotation = ({ board, player, setPlayer }) => {
   const shape = rotate({
     piece: player.tetromino.shape,
-    direction: 1
+    direction: 1,
   });
 
   const position = player.position;
@@ -18,8 +22,8 @@ const attemptRotation = ({ board, player, setPlayer }) => {
       ...player,
       tetromino: {
         ...player.tetromino,
-        shape
-      }
+        shape,
+      },
     });
   } else {
     return false;
@@ -29,41 +33,35 @@ const attemptRotation = ({ board, player, setPlayer }) => {
 export const movePlayer = ({ delta, position, shape, board }) => {
   const desiredNextPosition = {
     row: position.row + delta.row,
-    column: position.column + delta.column
+    column: position.column + delta.column,
   };
 
   const collided = hasCollision({
     board,
     position: desiredNextPosition,
-    shape
+    shape,
   });
 
   const isOnBoard = isWithinBoard({
     board,
     position: desiredNextPosition,
-    shape
+    shape,
   });
 
-  // Is the tetromino on the board and not touching anything? Prevent move if not. 
+  // Is the tetromino on the board and not touching anything? Prevent move if not.
   const preventMove = !isOnBoard || (isOnBoard && collided);
   const nextPosition = preventMove ? position : desiredNextPosition;
 
   const isMovingDown = delta.row > 0;
-    // Stamps the tetromino on the board and creates new piece. 
+  // Stamps the tetromino on the board and creates new piece.
   const isHit = isMovingDown && (collided || !isOnBoard);
 
   return { collided: isHit, nextPosition };
 };
 
 // Execute type of attempted movement
-const attemptMovement = ({ 
-  board, 
-  action, 
-  player, 
-  setPlayer, 
-  setGameOver 
-}) => {
-  const delta = { row: 0, column: 0};
+const attemptMovement = ({ board, action, player, setPlayer, setGameOver }) => {
+  const delta = { row: 0, column: 0 };
   let isFastDropping = false;
 
   if (action === Action.FastDrop) {
@@ -82,10 +80,10 @@ const attemptMovement = ({
     delta,
     position: player.position,
     shape: player.tetromino.shape,
-    board
+    board,
   });
 
-  // Did we collide immediately? If so, game over! 
+  // Did we collide immediately? If so, game over!
   const isGameOver = collided && player.position.row === 0;
   if (isGameOver) {
     setGameOver(isGameOver);
@@ -96,23 +94,23 @@ const attemptMovement = ({
     ...player,
     collided,
     isFastDropping,
-    position: nextPosition
+    position: nextPosition,
   });
 };
 
 // Create a tetromino action
 export const playerController = ({
-    action,
-    board,
-    player,
-    setPlayer,
-    setGameOver
+  action,
+  board,
+  player,
+  setPlayer,
+  setGameOver,
 }) => {
- if (!action) return;
+  if (!action) return;
 
- if (action === Action.Rotate) {
-    attemptRotation({ board, player, setPlayer })
- } else {
-    attemptMovement({ board, player, setPlayer, action, setGameOver})
- }
+  if (action === Action.Rotate) {
+    attemptRotation({ board, player, setPlayer });
+  } else {
+    attemptMovement({ board, player, setPlayer, action, setGameOver });
+  }
 };

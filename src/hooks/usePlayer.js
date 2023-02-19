@@ -1,33 +1,38 @@
+/* eslint-disable import/prefer-default-export */
+/* eslint-disable no-unused-vars */
+/* eslint-disable import/extensions */
 import { useState, useCallback } from "react";
 
 import { randomTetromino } from "../business/Tetrominoes.js";
 
 // builds initial and updated version of the player
 const buildPlayer = (previous) => {
-    let tetrominoes;
+  let tetrominoes;
 
-    if (previous) {
-        tetrominoes = [...previous.tetrominoes];
-        tetrominoes.unshift(randomTetromino());
-    } else {
-        tetrominoes = Array(5).fill(0).map((_) => randomTetromino());
-    }
+  if (previous) {
+    tetrominoes = [...previous.tetrominoes];
+    tetrominoes.unshift(randomTetromino());
+  } else {
+    tetrominoes = Array(5)
+      .fill(0)
+      .map((_) => randomTetromino());
+  }
 
-    return {
-        collided: false,
-        isFastDropping: false,
-        position: { row: 0, column: 4},
-        tetrominoes,
-        tetromino: tetrominoes.pop()
-    };
+  return {
+    collided: false,
+    isFastDropping: false,
+    position: { row: 0, column: 4 },
+    tetrominoes,
+    tetromino: tetrominoes.pop(),
+  };
 };
 
 export const usePlayer = () => {
-    const [player, setPlayer] = useState(buildPlayer());
+  const [player, setPlayer] = useState(buildPlayer());
 
-    const resetPlayer = useCallback(() => {
-        setPlayer((prev) => buildPlayer(prev));
-    }, []);
+  const resetPlayer = useCallback(() => {
+    setPlayer((prev) => buildPlayer(prev));
+  }, []);
 
-    return [player, setPlayer, resetPlayer];
-}
+  return [player, setPlayer, resetPlayer];
+};

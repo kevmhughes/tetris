@@ -1,7 +1,13 @@
+/* eslint-disable react/jsx-filename-extension */
+/* eslint-disable react/react-in-jsx-scope */
+/* eslint-disable no-unused-vars */
+/* eslint-disable react/prop-types */
+/* eslint-disable react/function-component-definition */
+/* eslint-disable import/extensions */
 import "./Tetris.css";
 
 import Board from "../Board/Board.js";
-import GameStats from "../GameStats/GameStats.js"
+import GameStats from "../GameStats/GameStats.js";
 import Previews from "../Previews/Previews.js";
 import GameController from "../GameController/GameController";
 
@@ -13,8 +19,8 @@ const Tetris = ({ rows, columns, setGameOver }) => {
   const [gameStats, addLinesCleared] = useGameStats();
   // The player is the grid in which the tetromino piece sits
   const [player, setPlayer, resetPlayer] = usePlayer();
-  const [board, setBoard] = useBoard({ 
-    rows, 
+  const [board, setBoard] = useBoard({
+    rows,
     columns,
     player,
     resetPlayer,
@@ -23,22 +29,22 @@ const Tetris = ({ rows, columns, setGameOver }) => {
 
   return (
     <div className="Tetris">
-        <Board board={board} />
-      <div className="SidePanel" style={{display: "flex"}}>
-          <div className="PreviewContainer">
-              <Previews tetrominoes={player.tetrominoes} />  
-            </div>
-          <GameStats gameStats={gameStats} />
-          </div>
-      <GameController 
+      <Board board={board} />
+      <div className="SidePanel" style={{ display: "flex" }}>
+        <div className="PreviewContainer">
+          <Previews tetrominoes={player.tetrominoes} />
+        </div>
+        <GameStats gameStats={gameStats} />
+      </div>
+      <GameController
         board={board}
         gameStats={gameStats}
         player={player}
         setGameOver={setGameOver}
         setPlayer={setPlayer}
-        />
+      />
     </div>
-  )
+  );
 };
 
 export default Tetris;
