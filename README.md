@@ -21,7 +21,7 @@ Play the game here [here](https://kevmhughes.github.io/tetris/)
 ### Development Environment
 * Node.js
 
-### Libraries & Frameworks
+### Library
 * React.js
 
 
