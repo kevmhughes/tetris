@@ -14,7 +14,7 @@ Blocks of different shapes drop from the top of the screen. Each block is made u
 <img src="src/assets/desktop_screenshot.png"/>
 </kbd>
 
-[Play](https://kevmhughes.github.io/tetris/)
+Play the game here [here](https://kevmhughes.github.io/tetris/)
  
 # Tools Used
 
