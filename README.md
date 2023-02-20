@@ -13,6 +13,7 @@ Blocks of different shapes drop from the top of the screen. Each block is made u
 <kbd>
 <img src="src/assets/desktop_screenshot.png"/>
 </kbd>
+Play the game here [here](https://kevmhughes.github.io/tetris/)
  
 # Tools Used
 
