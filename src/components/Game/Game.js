@@ -70,9 +70,6 @@ const Game = ({ rows, columns }) => {
             <p>
               <b>q:</b> quit
             </p>
-            <p>
-              <b>p:</b> pause
-            </p>
             <div className="ButtonsInMenuContainer">
               <button
                 className="ButtonsInMenu"

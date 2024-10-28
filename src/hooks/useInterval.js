@@ -1,5 +1,7 @@
+/* eslint-disable no-inner-declarations */
 /* eslint-disable consistent-return */
 /* eslint-disable import/prefer-default-export */
+
 import { useEffect, useRef } from "react";
 
 // Custom hook by Dan Abramov
@@ -13,18 +15,17 @@ export const useInterval = (callback, delay) => {
 
   // Set up interval
   useEffect(() => {
-    function tick() {
-      // fixes problem with autofocus when clicking on the screen during an active game but not when paused
-      const gameControllerInput = document.querySelector(".GameController");
-      gameControllerInput.focus();
-
-      savedCallback.current();
-    }
     if (delay !== null) {
+      function tick() {
+        // fixes problem with autofocus when clicking on the screen during an active game but not when paused
+        const gameControllerInput = document.querySelector(".GameController");
+        gameControllerInput?.focus();
+
+        savedCallback.current();
+      }
+
       const id = setInterval(tick, delay);
-      return () => {
-        clearInterval(id);
-      };
+      return () => clearInterval(id);
     }
-  }, [delay]);
+  }, [delay]); // Include delay in the dependency array
 };
